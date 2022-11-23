@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500&family=Poppins:wght@400&display=swap');
+:root{
+    --primary-color: #22254b;
+    --secondary-color: #373b69;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    background: var(--primary-color);
+}
+nav{
+    background: var(--secondary-color);
+}
+#navBar{
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+   padding: 0 40px;
+}
+.logo img{
+    border-radius: 12px;
+}
+#search{
+width: 250px;
+padding: 0.5rem 0.75rem;
+font-size: 18px;
+border-radius: 50px;
+background: transparent;
+border: 1px solid rgb(2, 2, 50);
+color: #fff;
+}
+#search:focus{
+    outline: none;
+    border-color: var(--primary-color);
+    background: var(--primary-color);
+    counter-increment: 2px;
+}
+::placeholder{
+    color: rgba(164, 174, 232, 0.374);
+}
+.container{
+    width: 97%;
+    margin: auto;
+}
+.movies{
+padding: 1rem 0;
+width: 100%;
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+grid-gap: 1.25rem 1rem;
+}
+.movie{
+background: var(--secondary-color);
+box-shadow: 3px 3px 10px rgba(0 0 0 0.9);
+position: relative;
+overflow: hidden;
+}
+.movie img{
+    width: 100%;
+}
+.movie-info{
+    display: flex;
+    padding: 1rem;
+    color: #fff;
+    justify-content: space-between;
+    align-items: center;
+}
+.movie-info h2{
+    line-height: 1.2;
+    font-weight: bold;
+    font-size: 19px;
+    letter-spacing: 1.5px;
+    margin-right: 7px;
+}
+.movie-info p{
+padding: 5px 10px;
+border-radius: 5px;
+background: var(--primary-color);
+font-size: 1.2rem;
+font-weight: 650;
+color: gold;
+}
+
+.summary{
+    position: absolute;
+    color: #333;
+    background: #fff;
+    bottom: 0;
+    padding: 1.25rem;
+    transform: translateY(101%);
+    transition: transform 0.5s ease-in;
+}
+.summary h3{
+    padding: 1.2rem 0;
+}
+.summary p{
+font-size: 16px;
+line-height: 1.5;
+padding-bottom: 1rem;
+}
+
+.movie:hover .summary{
+    transform: translateY(0);
+}
+.movie-info p.green{
+    color: green;
+}
+.movie-info p.orange{
+    color: orange;
+}
+.movie-info p.red{
+    color: red;
+}
+
+
+@media(max-width: 700px){
+    .movies{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 500px){
+    #navBar{
+        padding: 8px;
+    }
+    .movies{
+        grid-template-columns: repeat(1, 315px);
+        justify-content: center;
+    }
+    .movie{
+        margin: auto;
+    }
+
+    
+}
